@@ -1,0 +1,45 @@
+.progress-circle-wrap {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border: 10px solid grey;
+  border-radius: 50%;
+}
+
+.progress-circle {
+  display: inline-block;
+  box-sizing: border-box;
+  position: absolute;
+  border: 10px solid grey;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  clip: rect(0, 100px, 100px, 50px);
+  top: -10px;
+  left: -10px;
+}
+
+.progress-left {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 10px solid green;
+  border-radius: 50%;
+  clip: rect(0, 50px, 100px, 0);
+  top: -10px;
+  left: -10px;
+}
+.progress-right {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 10px solid green;
+  border-radius: 50%;
+  clip: rect(0, 100px, 100px, 50px);
+  top: -10px;
+  left: -10px;
+}
