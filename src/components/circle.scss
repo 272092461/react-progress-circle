@@ -1,0 +1,51 @@
+$progress-width: 10px;
+$rect-size: 100px;
+$progress-unload: $progress-width solid grey;
+$progress-load: $progress-width solid #00CC00;
+
+@mixin circle-base {
+  box-sizing: border-box;
+  width: $rect-size;
+  height: $rect-size;
+  border-radius: 50%;
+}
+
+@mixin circle-position {
+  position: absolute;
+  top: - $progress-width;
+  left: - $progress-width;
+}
+
+.progress-circle-wrap {
+  @include circle-base;
+  position: relative;
+  display: inline-block;
+  border: $progress-unload;
+}
+
+.progress-circle {
+  @include circle-base;
+  @include circle-position;
+  clip: rect(0, $rect-size, $rect-size, $rect-size / 2);
+}
+
+.progress-left {
+  @include circle-base;
+  position: absolute;
+  border:  $progress-load;
+  clip: rect(0, $rect-size / 2, $rect-size, 0);
+}
+.progress-right {
+  @include circle-base;
+  position: absolute;
+  border: $progress-load;
+  clip: rect(0, $rect-size, $rect-size, $rect-size / 2);
+}
+
+.progress-percent {
+  line-height: $rect-size;
+  width: $rect-size;
+  vertical-align: middle;
+  text-align: center;
+  margin: -$progress-width;
+}
